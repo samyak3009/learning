@@ -1,0 +1,73 @@
+
+    JavaScript is the world's most popular programming language.
+    JavaScript is the programming language of the Web.
+    JavaScript is easy to learn.
+    The Original JavaScript ES1 ES2 ES3 (1997-1999)
+    The First Main Revision ES5 (2009)
+    The Second Revision ES6 (2015)
+    All Yearly Additions (2016, 2017, 2018, 2019, 2020)
+    You don't have to get or download JavaScript.
+    JavaScript is already running in your browser on your computer, on your tablet, and on your smart-phone.
+    JavaScript is free to use for everyone.
+
+    /*
+    document.getElementById('myImage').src
+    document.getElementById('myImage').innerHTML
+    */
+
+    In HTML, JavaScript code is inserted between <script> and </script> tags.
+    
+    /*
+    <script>
+        document.getElementById("demo").innerHTML = "My First JavaScript";
+    </script>
+    */
+
+    Scripts can be placed in the <body>, or in the <head> section of an HTML page, or in both.
+
+    /*
+    document.getElementById("idname").innerHTML
+    document.write("hello")
+    window.alert("hi samyak")
+    console.log()
+
+    */
+
+    In JavaScript, the window object is the global scope object. This means that variables, properties, 
+    and methods by default belong to the window object. This also means that specifying the window keyword is optional
+
+Keyword	Description
+var->	Declares a variable
+let->	Declares a block variable
+const->	Declares a block constant
+if->	Marks a block of statements to be executed on a condition
+switch->	Marks a block of statements to be executed in different cases
+for->	Marks a block of statements to be executed in a loop
+function->	Declares a function
+return->	Exits a function
+try->	Implements error handling to a block of statements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

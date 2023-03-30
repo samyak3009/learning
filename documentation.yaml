@@ -1,0 +1,12 @@
+- create a dir name as # mkdir crud_mern && crud_mern  
+- after that run # npm init -y
+
+  - what npm init do?
+    - it simply create a package.json in this dir which represent that this is a npm project and this file store the meta data information about the project.
+    - npm is package manager with npm repository (here you can search pacakges https://www.npmjs.com/).
+    - If you need to install anything any dependent packages you need package.json file which will store the list and version of all these dependent packages as a meta data, that is created by npm init.
+    - these dependent packages are installed by npm install moduleName and get stored in node_modules.
+    - the dependent packages are used so you don't need to write code that someone else has already written and you can simple reuse their code.
+    - If you don't have package.json in a directory, and you trigger npm install moduleName at that directory path then module will be installed globally.
+
+- Create a new file and name it app.js in the project folder. This is the root file for your Node.js project.
