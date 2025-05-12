@@ -1,0 +1,15 @@
+- introduction to Nodejs
+  - Nodejs is server side javascript run time environment. NodeJs is built on top of v8 engine and mainly used to create web server
+  - Nodejs works in a single process threads, it provides a set of asynchronous I/O primitives in its standard library that prevent js code to block.
+  - This allows Node.js to handle thousands of concurrent connections with a single server without introducing the burden of managing thread concurrency, 
+    which could be a significant source of bugs.
+  - Node.js has a unique advantage because millions of frontend developers that write JavaScript for the browser are now able to write the server-side 
+    code in addition to the client-side code without the need to learn a completely different language.
+
+- v8 javascript engine
+  - v8 is the name of javascript engine which provide the run time environment to parse and execute the javascript code, 
+    and this is used by the nodejs and chrome by which we are able to run and execute the javascript code.
+  - v8 was choosen to be the engine that power Node.Js by which is gave an incredibal amount of power to javascript to write the server-side code also.
+  - some other js engine are SpiderMonkey for FireFox and javascriptcore for safari and many more.
+  - javascript is generally consider an interpreted language, but modern javascript engines no longer just interprete javascript but also compile it too
+  - JavaScript is internally compiled by V8 with just-in-time (JIT) compilation to speed up the execution.
