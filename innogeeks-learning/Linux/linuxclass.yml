@@ -1,0 +1,254 @@
+LINUX
+-----------------
+- IMPORTANT KNOW HOW ABOUT LINUX
+  - Linux has ROOT user which is kind of Super User and has power to delete anything including the OS itself
+  - Linux is a Case-Sensitive OS. LS is not equal to ls. ABC.txt is not same as abc.txt
+  - Linus Torvalds did not develop the Linux Operating System. He did develop the Linux KERNAL.
+  - Linux Kernal is NOT an OS. It's a middle layer between hardware and user.
+  - Linux is all about CLI and not the UI.
+
+- File System Format
+  - ext3
+  - ext4
+  - xfs
+  - ntfs
+  - fat
+  - FAT16 (Windows)
+  - FAT32 (Windows)
+  - NTFS (Network File System) (Windows)
+
+- What is Root?
+  - Root Account --> The most powerful user account (User)
+  - Root as / --> This is the first directory, also known as Root Directory
+  - Root Home /root --> This is the Home Directory of a ROOT user
+
+- Commands
+  - date
+  - cal
+  - pwd
+  - man
+  - -help
+  - cd 
+  - mv -R
+  - cp -R
+  - ls -ll
+  - rm -rf
+  - unlink
+  - mkdir
+  - cat
+  - head
+  - tail
+  - head -n <number of lines> 
+  - tail -n <number of lines>
+  - touch
+  - echo "Message" > a.txt
+  - echo "Just to print"
+  - rmdir
+  - nano
+  - vi
+  - clear 
+  - Ctrl + L
+
+- Wildcard Characters
+  - * --> It represents zero or more characters
+  - ? --> It presents a Single Char
+  - [] --> represents the range of the char
+  - touch abc{1..9}pqr.txt
+
+- File System Structure
+
+  - alais cls=clear
+  - unalais cls
+  - hostname
+  - to login into the root type "sudo -i"
+  - shutdown -r now (for restart use -r and for shutdown without -r)
+  - cat 
+  - echo "samyak"
+  - printenv --> print all the environment varibale 
+  - echo $USER --> to print the value asign to that particular varibale 
+  - lscpu ---> to print the hardware of the System
+  - MYKEY=MYVAR ----> setting up the new varibale in environment
+  - df -h
+  - histroy
+  - !<number> like !324
+  - ifconfig
+  - apt           
+
+
+Symlinks
+  - what is inode?
+   it's an identifisction of a folder or a file in a numeric format.
+  - soft Symlinks
+  - hard Symlinks
+
+File permissions
+- 3 type of permissions
+    -r - read permissions
+    -w - write permissions
+    -x - execute/run permissions
+
+  - 3 levels where the permissionscan be configured/ apply
+    -u ---> user level
+    -g ---> group level
+    -o ---> others (Everyone on the system)
+
+  ls -li -rw-rw-r--
+
+          User                  Group            Other(everyone else)
+  - read write execute    read write execute     read write execute
+
+  - chmod 700
+  - chmod 600
+  - chmod 400
+
+File Ownership
+
+- 2 type of user who can own a file/folder
+  - owner by user who owned the group
+  - owner by user who owns the file
+
+  Mayur is part of group developer
+
+
+
+USER and GROUPS 
+- groups [username]
+- groupadd innovaccer #[group name]
+- sudo usermod -a -G groupname username #[groupname] #[username]
+- sudo useradd username #[username]
+- sudo groupdel groupname
+- sudo userdel -r username [-r is used if the home directory should be removed]
+- sudo passwd username [to upadte the password for the given username]
+- gpasswd ---> R&D.
+
+
+- Process and job 
+  - Application/service --> It's a programme in computer like calculator.
+  - Scripts --> a source code we can execute, it is written in a file or a file package which is executable SHELL Script/ bash Script.
+  - Process --> when you run an applicatin a process get created for that application. it also geneerates a PID (Process ID).
+  - Daemon --> Something runs in the background and execute a service until the service complete the work. Like Alarm Service.
+  - Thread --> Every process can have one or moere thread associted with it. Like Service/Process --> Thread 1, Thread 2,.....
+  - Job --> it runs a Service/Application or Process on the scheduled or a given time. Job Management -> cron job
+  - 
+
+-Process and Commands
+  - sudo systemctl start|stop|restart|status|reload <servicename>
+  - sudo service apache2 start
+  - sudo systemctl enable/disable <servicename>
+  - sudo systemctl list-units --all
+  - ps --> show all the running process in the current shell
+  - ps -e [list all the peocess running in background]
+  - ps -e | grep "searchtxt"
+  - ps aux
+  - ps -ef
+  - ps -u <username>
+  - top
+  - top -u <username>
+  - top + k <pid>
+  - top + c for full path
+  - kill <pid> 
+  - kill -9 <pid> 
+
+Application --> process ---> Thread1, Thread2, ...Thread10.
+
+SSH configuration
+  intsall ssh server
+    - sudo apt-get install openssh-server
+  - sudo systemctl start ssh
+  - for mac or linux user
+    ssh <usernme>@<ipaddress>
+
+-Ping command
+  -ping <domain name> google.com
+  -nslookup <ipaddress>
+  -curl <web url>
+  -curl -O <download link> ---> to download the file
+  -wget <download link> ---> to download the file
+
+-Shell scripting 
+  --> find the shell script file
+  --> ./myscript.sh
+
+-Memory Management Commands
+  - df -h
+  - df -h | grep -v tmpfs
+  - du -a /home/samyakjain/downloads/ | sort -nr | more
+  - du -a /home/samyakjain/downloads/ | sort -nr 
+
+-check the processess
+  - top
+  - lsmem
+  - free -h
+  - cat /proc/meminfo
+  - vmstat
+  - pmap <pid>
+  - sudo dmidecode
+  - sudo lscpu
+  - cat /proc/cpuinfo
+  - sudo apt install sysstat
+    - isostat 
+
+
+
+-Firewall
+  -iptable -->older version
+  -firewalld --> Newer
+  -ufw --> uncompicated firewall
+
+
+- GIT 
+  -what is GIT? version control system
+  -it is a free and open source software
+
+  -git add <filename> [to add only a particular file] // git add . [to add all the changes]
+  -git stash [to revert the added file]
+  
+
+  -optionally we can clone the repository by using
+    - git clone <url>
+  - git pull --> to download the changes pushed by another developers
+
+
+-innogeeks token : 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
+
+"file added with samyak branch"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
