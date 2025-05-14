@@ -44,7 +44,11 @@
   
   >  However, managing these containers at scale can be challenging.
 
+<<<<<<< HEAD
 **This is where Kubernetes comes in** 
+=======
+  >  **This is where Kubernetes comes in** 
+>>>>>>> 55605b7 (kuber: added introduction to kubernates)
 
   - It provides a platform to manage containerized applications. Abstracting away the underlying 
     infrastructure and making it easier to manage and scale applications.
@@ -57,8 +61,10 @@
   - Kubernetes also provides a declarative approach to managing infrastructure, where you specify the desired
     state of the application, and Kubernetes takes care of making it happen. And when we look at the `master node` 
     components, it includes API server Etcd scheduler and control manager. the `worker nodes` will contain 
-    container runtime such as Docker or Portman. And the Kubernetes agent, known as `Kubelet` and `Kubelet` is 
-    responsible for communication between `master nodes` and `worker nodes`.
+    container runtime such as Docker or Portman. 
+    
+  - the Kubernetes agent which is known as `Kubelet`. `Kubelet` is responsible for communication between `master nodes` 
+    and `worker nodes`.
 
   > So in summary, Kubernetes is an essential tool for managing containerized application at scale, and 
     it is also used by a lot of organizations around the world. So whether you are on a small project or 
