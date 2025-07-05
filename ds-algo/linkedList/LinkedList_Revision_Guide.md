@@ -359,7 +359,10 @@ public boolean isPalindrome(ListNode head) {
 public ListNode deleteMiddle(ListNode head) {
     if(head == null || head.next == null) return null;
     
-    ListNode slow = head, fast = head.next.next;
+    ListNode slow = head;
+    // will trace prev node of middle node that why we are using head.next.next
+    ListNode fast = head.next.next;
+    
     while(fast != null && fast.next != null) {
         slow = slow.next;
         fast = fast.next.next;
