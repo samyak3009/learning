@@ -44,11 +44,11 @@ class LinkedList{
 
     // delete the middle node of the linked list
     public ListNode deleteMiddle(ListNode head) {
-        if(head.next == null)
+        if(head == null || head.next == null)
             return null;
         
         ListNode slow = head;
-        // will trace prev slow node
+        // will trace prev node of middle node
         ListNode fast = head.next.next;
         
         while (fast != null && fast.next != null)

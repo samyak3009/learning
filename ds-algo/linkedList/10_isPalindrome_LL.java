@@ -45,6 +45,9 @@ class LinkedList{
 
     // check if the linked list is a palindrome
     public boolean isPalindrome(ListNode head){
+        if(head == null || head.next == null)
+            return true;
+
         ListNode secondHalf = middleNode(head);
         secondHalf = reverse(secondHalf);
         ListNode firstHalf = head;
@@ -61,6 +64,9 @@ class LinkedList{
 
     // find the middle node of the linked list
     public ListNode middleNode(ListNode head) {
+        if(head == null || head.next == null)
+            return head;
+
         ListNode slow = head, fast = head;
         while(fast != null && fast.next != null){
             slow = slow.next;
@@ -71,6 +77,9 @@ class LinkedList{
 
     // reverse the linked list
     public ListNode reverse(ListNode head){
+        if(head == null || head.next == null)
+            return head;
+
         ListNode current = head;
         ListNode prev = null;
         ListNode next = null;

@@ -37,6 +37,9 @@ class LinkedList{
 
     // find the length of the loop in the linked list
     public int detectCycle(ListNode head) {
+        if(head == null || head.next == null)
+            return 0;
+
         ListNode slow = head, fast = head;
         while(fast != null && fast.next != null){
             slow = slow.next;

@@ -39,6 +39,9 @@ class LinkedList{
 
     // find the starting point of the loop in the linked list
     public ListNode detectCycle(ListNode head) {
+        if(head == null || head.next == null)
+            return null;
+
         ListNode slow = head, fast = head;
         while(fast != null && fast.next != null){
             slow = slow.next;

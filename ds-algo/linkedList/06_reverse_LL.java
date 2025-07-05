@@ -33,6 +33,9 @@ class LinkedList{
 
     // reverse the linked list
     public ListNode reverse(ListNode head){
+        if(head == null || head.next == null)
+            return head;
+
         ListNode current = head;
         ListNode prev = null;
         ListNode next = null;
