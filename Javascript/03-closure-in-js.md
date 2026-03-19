@@ -2,7 +2,7 @@
 
 ## What is a Closure?
 
-A closure is a fundamental JavaScript concept that occurs when a function retains access to its lexical scope even when the function is executed outside that scope. In simpler terms, a closure is created when a function "remembers" the variables from the place where it was defined, regardless of where it's executed.
+A closure is a fundamental JavaScript concept that occurs when a function retains access to its lexical scope even when the function is executed outside that scope. In simpler terms, a closure is created when a function "remembers" the variables/functions from the place where it was defined, regardless of where it's executed.
 
 ## Key Characteristics of Closures
 

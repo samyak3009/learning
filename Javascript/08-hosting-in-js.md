@@ -113,7 +113,7 @@ let name = 'John';
 **Block Scope with `let`:**
 ```javascript
 {
-  console.log(x); // ReferenceError
+  console.log(x); // ReferenceError Cannot access 'name' before initialization
   let x = 5;
 }
 
@@ -317,14 +317,15 @@ The **Temporal Dead Zone** is the period between entering scope and the actual d
 ### TDZ with Function Parameters
 
 ```javascript
-function example(a = b, b) {
+function example(a = b, b) { // Parameter initialization starts LEFT → RIGHT in this b is in TDZ
   return [a, b];
 }
+// note that parameter behave as let 
 
 example(undefined, 2); // ReferenceError: Cannot access 'b' before initialization
 
 // Fixed version
-function example(b, a = b) {
+function example(b, a = b) { // here b is 2 
   return [a, b];
 }
 example(2); // [2, 2]
@@ -441,9 +442,9 @@ var bar = function() {
 /*
 Creation Phase:
 Variable Environment:
+  foo: function() { return 'function declaration'; }
   a: undefined
   bar: undefined
-  foo: function() { return 'function declaration'; }
 
 Lexical Environment:
   b: <uninitialized> (TDZ)
@@ -1558,15 +1559,3 @@ console.log(typeof myFunc); // "function"
 - [You Don't Know JS: Scope & Closures](https://github.com/getify/You-Dont-Know-JS)
 
 ---
-
-**Last Updated**: March 2026  
-**Author**: [Your Name]  
-**GitHub**: [Your GitHub Profile]
-
-## Contributing
-
-Found an error or want to add more examples? Feel free to submit a pull request!
-
-## License
-
-MIT License - Free to use for learning and interview preparation.

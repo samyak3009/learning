@@ -148,3 +148,14 @@ console.log(Boolean(null)); // false
 5. Be consistent with your usage across your codebase
 
 Understanding these differences will help you write more predictable code and debug issues more effectively.
+
+### What is the difference between `==` and `===` in JavaScript?
+
+`==` is the abstract equality operator while `===` is the strict equality operator. The `==` operator compares for equality after doing any necessary type conversions, while `===` does not do type conversion. So if two values are not the same type, `===` returns `false`.
+
+| Aspect | `==` | `===` |
+|---|---|---|
+| Name | (Loose) Equality operator | Strict equality operator |
+| Type coercion | Yes | No |
+| Compares value and type | No | Yes |
+
