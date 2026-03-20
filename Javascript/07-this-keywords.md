@@ -136,6 +136,27 @@ const person = {
 };
 ```
 
+### Key Point: Objects Don't Create New Scope (Only Functions Do)
+An object literal like `{ ... }` creates an object, but it does **not** create a new lexical scope for variables or `this`.
+
+Scope is created by **functions** (and also by blocks like `{ ... }` when you use `let`/`const`). What changes between regular functions and arrow functions inside an object is `this` binding:
+
+object is just a data structure
+```javascript
+// same as
+const greet = () => {
+  console.log(this.name);
+};
+
+const obj = {
+  name: "Samyak",
+  greet
+};
+```
+
+- A **regular function/method** gets its `this` from the **call-site** (e.g., `obj.method()` makes `this === obj`).
+- An **arrow function** does **not** create its own `this`. It captures (lexically) the `this` from the surrounding scope where it was defined.
+
 ## Advanced 'this' Scenarios
 
 ### Event Handlers
