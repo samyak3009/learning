@@ -119,13 +119,6 @@ public class SubsetSumMemoization {
 public class SubsetSumTabular {
 
     public boolean isSubsetSum(int[] arr, int sum, int n) {
-        if (sum == 0) {
-            return true;
-        }
-        if (n == 0) {
-            return false;
-        }
-
         boolean[][] t = new boolean[n + 1][sum + 1];
 
         // Base condition here is calculated when it reached to t[i][0] as here sum become zero;
