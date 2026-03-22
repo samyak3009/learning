@@ -39,9 +39,9 @@ public class Knapsack01Recursion {
             return recursiveKnapsack(W, val, wt, n - 1);
         }
 
-        int excluded = recursiveKnapsack(W, val, wt, n - 1);
+        int notInclude = recursiveKnapsack(W, val, wt, n - 1);
         int included = val[n - 1] + recursiveKnapsack(W - wt[n - 1], val, wt, n - 1);
-        return Math.max(excluded, included);
+        return Math.max(notInclude, included);
     }
 }
 ```
@@ -87,9 +87,9 @@ public class Knapsack01Memoization {
             return dp[n][W] = memoKnapsack(W, val, wt, n - 1);
         }
 
-        int excluded = memoKnapsack(W, val, wt, n - 1);
-        int excluded = val[n - 1] + memoKnapsack(W - wt[n - 1], val, wt, n - 1);
-        return dp[n][W] = Math.max(excluded, excluded);
+        int notInclude = memoKnapsack(W, val, wt, n - 1);
+        int include = val[n - 1] + memoKnapsack(W - wt[n - 1], val, wt, n - 1);
+        return dp[n][W] = Math.max(include, notInclude);
     }
 }
 ```
