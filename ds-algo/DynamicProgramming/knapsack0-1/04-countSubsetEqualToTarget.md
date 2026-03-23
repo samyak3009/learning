@@ -33,17 +33,20 @@ class Solution {
      */
     public int perfectSum(int[] nums, int target) {
         int n = nums.length;
-        return subsetSumCount(nums, target, n);
+        return countSubsetEqualToTarget(nums, target, n);
     }
 
-    private int subsetSumCount(int[] nums, int sum, int n) {
+    private int countSubsetEqualToTarget(int[] nums, int sum, int n) {
         int[][] t = new int[n + 1][sum + 1];
         // base case
         for(int i = 0; i < n+1; i++)
             t[i][0] = 1;
 
         for (int i = 1; i < n+1; i++) {
-            // j must start at 0: handles target 0 and nums [24, 0, 28]  containing 0 as in this case sum(j) = 0 is a valid sum.
+            // j must start from 0 to correctly handle cases when array contains 0.
+            // When nums[i-1] == 0, the number of ways to form sum 0 doubles
+            // because we can either include or exclude 0 without changing the sum.
+            // If we skip j = 0, we miss these combinations and get incorrect results.
             for (int j = 0; j < sum+1; j++) {
                 if (j < nums[i - 1]) {
                     t[i][j] = t[i - 1][j]; // not include
