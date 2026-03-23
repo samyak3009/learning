@@ -54,7 +54,7 @@ public class Knapsack01Recursion {
 
 **Complexity:** Time \(O(n \cdot W)\), Space \(O(n \cdot W)\) for table + \(O(n)\) stack.
 
-**State meaning:** `dp[i][w]` = max value using first `i` items with capacity `w`. Initialize with `-1` for “uncomputed”.
+**State meaning:** `dp[i][w]` = max value using first `i` items with capacity `w`. Initialize with `null` for “uncomputed”.
 
 ```java
 import java.util.*;
@@ -63,28 +63,18 @@ import java.util.*;
  * 0/1 Knapsack — Pattern 2: Recursion + memoization (top-down DP).
  */
 public class Knapsack01Memoization {
-
-    private int[][] dp;
-
     public int knapsack(int W, int[] val, int[] wt) {
         int n = wt.length;
-        dp = new int[n + 1][W + 1];
-        for (int i = 0; i <= n; i++) {
-            Arrays.fill(dp[i], -1);
-        }
-        return memoKnapsack(W, val, wt, n);
+        dp = new Integer[n + 1][W + 1];
+        return memoKnapsack(W, val, wt, n, dp);
     }
 
-    private int memoKnapsack(int W, int[] val, int[] wt, int n) {
-        if (W == 0 || n == 0) {
-            return 0;
-        }
-        if (dp[n][W] != -1) {
-            return dp[n][W];
-        }
+    private int memoKnapsack(int W, int[] val, int[] wt, int n, Integer[][] dp) {
+        if (W <= 0 || n == 0) return 0;
+        if (dp[n][W] != null) return dp[n][W];
 
         if (W < wt[n - 1]) {
-            return dp[n][W] = memoKnapsack(W, val, wt, n - 1);
+            return dp[n][W] = memoKnapsack(W, val, wt, n - 1); // not include
         }
 
         int notInclude = memoKnapsack(W, val, wt, n - 1);
@@ -112,16 +102,7 @@ public class Knapsack01Tabular {
 
     public int knapsack(int W, int[] val, int[] wt) {
         int n = wt.length;
-        int[][] t = new int[n + 1][W + 1];
-
-        // Base: 0 items or 0 capacity → 0
-        for (int i = 0; i < n+1; i++) {
-            for (int j = 0; j < W+1; j++) {
-                if (i == 0 || j == 0) {
-                    t[i][j] = 0;
-                }
-            }
-        }
+        int[][] t = new int[n + 1][W + 1]; // by default all values are initialized to 0 which will be used as base case
 
         for (int i = 1; i < n+1; i++) {
             for (int j = 1; j < W+1; j++) {
